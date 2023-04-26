@@ -7,17 +7,17 @@ import InfiniteScroll from "react-infinite-scroller";
 export default function Home() {
 
   //表示するデータ
-  const [list, setList] = useState([1, 2, 3])
+  const [list, setList] = useState([0]);
   
   //項目を読み込むときのコールバック
   const loadMore = (page: any) => {
-    setList([...list, page])
-  }
+    setList([...list, page]);
+  };
 
   //各スクロール要素
   const items = (
     <ul>
-      {list.map((value) => <li>{value}</li>)}
+      {list.map((item, index) => <li key={index}>{item}</li>)}
     </ul>
   );
   
